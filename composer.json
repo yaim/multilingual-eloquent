@@ -1,0 +1,36 @@
+{
+    "name": "yaim/multilingual-eloquent",
+    "description": "A simple to setup and use Laravel package for storing dynamic translated (user provided) content in eloquent models.",
+    "authors": [
+        {
+            "name": "Yashar Imanlou",
+            "email": "me@yash.im"
+        }
+    ],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Yaim\\MultilingualEloquent\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yaim\\MultilingualEloquent\\ServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "laravel/framework": "5.8.x",
+        "orchestra/testbench": "^3.5"
+    }
+}

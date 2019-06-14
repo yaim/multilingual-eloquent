@@ -1,0 +1,19 @@
+language: php
+
+php:
+  - 7.2
+  - 7.3
+
+services:
+  - mysql
+
+before_script:
+  - mysql -e 'create database multilingual_eloquent_test;'
+  - composer self-update
+  - composer install --no-interaction
+
+script:
+  - ./vendor/bin/phpunit --configuration phpunit-ci-testing.xml --coverage-clover=coverage.xml
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
