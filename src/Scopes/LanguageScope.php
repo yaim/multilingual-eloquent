@@ -17,7 +17,7 @@ class LanguageScope implements Scope
     private function applyOnMultilingualModel(Builder $builder, MultilingualModel $model)
     {
         $builder
-        ->join($model->getTranslationTable(), function ($join) use ($model) {
+        ->leftJoin($model->getTranslationTable(), function ($join) use ($model) {
             $join->on($model->getQualifiedKeyName(), '=', $model->getQualifiedTranslationForeignKeyName())
                  ->where($model->getQualifiedLanguageCodeName(), '=', $model->getLocale());
         })
